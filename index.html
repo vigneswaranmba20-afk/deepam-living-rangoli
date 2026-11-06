@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f1e7">
+  <meta name="description" content="Create an original, vibrant Diwali rangoli greeting with precise living SVG geometry. Customize, illuminate, download and share.">
+  <title>DEEPAM · The Living Rangoli</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <style>
+    :root{--ink:#352c32;--muted:#8c7e7d;--paper:#f7f1e7;--rose:#a94458;--gold:#c38b48;--surface:#fffaf1;--line:#e7dbc9;--shadow:0 28px 80px #694b3b22}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px;-webkit-tap-highlight-color:transparent}
+    button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #b47f40;outline-offset:3px}
+    .shell{max-width:1260px;margin:0 auto;padding:22px 30px 60px}.top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:18px;gap:15px}
+    .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}.mark{width:39px;height:39px;border-radius:13px;background:#693f49;color:#fbe3a2;display:grid;place-items:center;box-shadow:0 7px 15px #3c203321;font-size:22px}.wordmark{font-family:Georgia,serif;font-weight:700;letter-spacing:2.5px;font-size:20px}.micro{font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);font-weight:700}.topaside{display:flex;align-items:center;gap:10px}.topaside .micro{letter-spacing:1px;text-transform:none}.kicker{font-size:11px;letter-spacing:2.2px;color:#a45e5d;text-transform:uppercase;font-weight:800}
+    .intro{text-align:center;margin:29px 0 25px}.intro h1{margin:6px 0 7px;font-size:clamp(32px,4.5vw,52px);font-family:Georgia,'Times New Roman',serif;line-height:1.13;font-weight:400;letter-spacing:-1.2px}.intro h1 em{color:#a64c65}.intro p{color:#796e6c;margin:0 auto;max-width:570px;line-height:1.65}
+    .workspace{display:grid;grid-template-columns:minmax(0,1.17fr) minmax(330px,.83fr);gap:27px;align-items:start}.preview-area{min-width:0}.card-frame{position:relative;max-width:605px;margin:auto;background:#d8c9b0;padding:12px;border-radius:19px;box-shadow:var(--shadow)}.card-stage{position:relative;aspect-ratio:760/880;overflow:hidden;border-radius:11px;background:#ede0cb;touch-action:manipulation}.card-stage svg{display:block;width:100%;height:100%}.fx-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.stage-hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#3f2931b8;color:#fff5e4;border:1px solid #ffffff33;border-radius:22px;padding:7px 12px;font-size:11px;pointer-events:none;transition:opacity .3s}.stage-hint.hidden{opacity:0}.card-stage.is-lit .flame{filter:url(#flameGlow)}.flame{transform-box:fill-box;transform-origin:center 75%;animation:flameDance 1.9s ease-in-out infinite alternate}.card-stage.is-lit .flame{animation-duration:.85s}.glimmer{animation:softGlimmer 3.2s ease-in-out infinite alternate;transform-origin:center}.card-stage:not(.is-lit) .glimmer{animation:none}.card-stage:not(.is-lit) .flame{animation-play-state:paused}
+    @keyframes flameDance{0%{transform:rotate(-3deg) scale(.97,1.04)}100%{transform:rotate(3deg) scale(1.05,.95)}}@keyframes softGlimmer{from{opacity:.5}to{opacity:1}}.preview-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;max-width:605px;margin:14px auto 0;color:#9c8171;font-size:11px}.preview-foot span{display:flex;align-items:center;gap:5px}
+    .studio{background:#fffaf4;border:1px solid #e8dac9;box-shadow:0 12px 40px #6144300d;border-radius:20px;padding:23px}.studio-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.studio h2{font-family:Georgia,serif;font-weight:400;font-size:24px;margin:0}.counter{font-size:10px;letter-spacing:1px;font-weight:750;color:#a87969;background:#f6e9de;padding:7px 10px;border-radius:50px}.field-label{display:flex;align-items:center;justify-content:space-between;color:#685956;font-weight:700;font-size:12px;margin-bottom:11px}.label-note{font-weight:450;color:#b09788;font-size:11px}.templates{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:3px 2px 13px}.templates::-webkit-scrollbar{display:none}.template{flex:0 0 92px;border:1.5px solid #e9dacb;border-radius:12px;padding:7px 6px 8px;text-align:center;background:#fffdfa;scroll-snap-align:start;color:#75635e;transition:.2s;min-width:0}.template[aria-pressed="true"]{border-color:#c27875;background:#fff1e8;box-shadow:0 0 0 2px #d68a8132}.template svg{display:block;width:72px;height:72px;margin:1px auto 6px}.template span{display:block;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700}
+    hr{height:1px;border:0;background:#eee1d3;margin:18px 0}.palette-scroll{display:flex;gap:11px;align-items:center;flex-wrap:wrap}.swatch{height:35px;width:35px;border-radius:50%;border:2px solid #fff;outline:1px solid #e1cebe;display:flex;gap:0;overflow:hidden;transform:scale(1);transition:transform .18s}.swatch[aria-pressed=true]{outline:2.5px solid #aa6565;outline-offset:3px;transform:scale(1.05)}.swatch i{height:100%;width:50%}.custom-heading{margin-top:17px}.color-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.color-item{display:flex;flex-direction:column;align-items:center;gap:5px;background:#fffaf7;border:1px solid #eadfd4;border-radius:10px;padding:8px 4px;cursor:pointer;font-size:10px;color:#7d6a61}.color-item input{width:34px;height:34px;border:0;padding:0;background:transparent;cursor:pointer}.color-item input::-webkit-color-swatch-wrapper{padding:0}.color-item input::-webkit-color-swatch{border:2px solid white;border-radius:50%;box-shadow:0 0 0 1px #ceb8a5}
+    .inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px}.inputwrap{display:block;min-width:0}.inputwrap span{font-size:11px;display:block;margin-bottom:8px;font-weight:700;color:#705f5b}.inputwrap input{border:1px solid #e6d7c7;background:#fffdf9;border-radius:9px;padding:11px 10px;width:100%;outline:none;font-size:12px;color:#604749}.inputwrap input:focus{border-color:#c28b6c}.option-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:16px}.option-row label{color:#6e5e58;font-size:12px;font-weight:650}.option-row input{accent-color:#9e5761;width:118px}.pill{background:#f0e2d0;border:none;color:#795352;border-radius:18px;padding:9px 13px;font-size:11px;font-weight:750}.btnrow{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:21px}.btn{border:1px solid #dac8ba;border-radius:10px;padding:13px 10px;background:#fffdf8;color:#6d4e4c;font-size:12px;font-weight:800;display:flex;justify-content:center;align-items:center;gap:8px;min-height:45px;transition:transform .2s}.btn:active{transform:scale(.97)}.btn.primary{background:#8c4657;border-color:#8c4657;color:white}.btn.secondary{background:#f4e8d9}.btn svg{width:16px;height:16px}.footnote{font-size:11px;line-height:1.5;color:#a38e81;margin:15px 0 0;text-align:center}.toaster{position:fixed;bottom:calc(23px + env(safe-area-inset-bottom));left:50%;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#3b2b33;color:#fff7e8;border-radius:50px;padding:12px 20px;font-size:12px;box-shadow:0 12px 40px #0003;z-index:10;transition:.25s;max-width:90%;text-align:center}.toaster.show{opacity:1;transform:translate(-50%,0)}.footer{text-align:center;color:#9a8b85;font-size:11px;margin:30px 0 2px;line-height:1.8}.footer a{color:#8e5460;text-decoration:none}.footer .diamond{color:#d3aa69}.small-actions{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:9px}.small-actions button{border:0;background:none;color:#916a64;font-size:11px;text-decoration:underline;text-underline-offset:3px;padding:4px}
+    @media(max-width:830px){.shell{padding:15px 14px 40px}.workspace{grid-template-columns:minmax(0,1fr);gap:18px}.intro{margin:19px 0}.intro h1{font-size:35px}.intro p{font-size:12px}.studio{padding:18px;min-width:0;width:100%}.templates{max-width:100%}.preview-foot{font-size:10px}.card-frame{max-width:580px;padding:9px}.studio h2{font-size:23px}.topaside .micro{display:none}.stage-hint{font-size:10px}}
+    @media(min-width:831px){.studio{position:sticky;top:16px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;scroll-behavior:auto!important;transition-duration:0ms!important}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a class="brand" href="./" aria-label="DEEPAM home"><span class="mark" aria-hidden="true">✦</span><span><span class="wordmark">DEEPAM</span><br><span class="micro">The living rangoli</span></span></a>
+      <div class="topaside"><span class="micro">Made with geometry. Shared with love.</span><span aria-hidden="true" style="color:#b18b5d;font-size:20px">✺</span></div>
+    </header>
+    <section class="intro" aria-label="Introduction"><div class="kicker">An interactive festival of lights</div><h1>A little light, <em>made yours.</em></h1><p>Choose a rangoli. Make its colours your own. Light the diyas and share a little joy. Every design is drawn with living vector geometry.</p></section>
+    <main class="workspace">
+      <section class="preview-area" aria-label="Live greeting card preview">
+        <div class="card-frame"><div id="cardStage" class="card-stage is-lit" role="img" aria-label="Happy Diwali greeting card with an intricate rangoli and glowing diyas"><svg id="artwork" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 880" aria-hidden="true"></svg><canvas class="fx-canvas" id="fxCanvas" aria-hidden="true"></canvas><div id="stageHint" class="stage-hint">✦ Tap the rangoli to scatter light</div></div></div>
+        <div class="preview-foot"><span><span aria-hidden="true">✧</span> Unique vector art · sharp at every size</span><span id="geometryStatus">8-fold symmetry · 45° precision</span></div>
+      </section>
+      <aside class="studio" aria-label="Design your greeting">
+        <div class="studio-hd"><h2>Your festive canvas</h2><span class="counter" id="designCounter">01 / 10</span></div>
+        <div class="field-label"><span>Choose your rangoli</span><span class="label-note">Swipe to explore →</span></div>
+        <div id="templateScroller" class="templates" aria-label="Rangoli design styles"></div>
+        <hr>
+        <div class="field-label"><span>Colour stories</span><span class="label-note" id="paletteName">Heritage glow</span></div>
+        <div id="paletteList" class="palette-scroll" aria-label="Colour palettes"></div>
+        <div class="field-label custom-heading"><span>Fine-tune every colour</span><span class="label-note">Tap to change</span></div>
+        <div id="colorGrid" class="color-grid"></div>
+        <hr>
+        <div class="field-label"><span>A personal touch</span><span class="label-note">Optional · always starts with Happy Diwali</span></div>
+        <div class="inputs"><label class="inputwrap"><span>For</span><input id="recipient" maxlength="34" placeholder="Someone special" autocomplete="off"></label><label class="inputwrap"><span>From</span><input id="sender" maxlength="34" placeholder="Your name" autocomplete="off"></label></div>
+        <div class="option-row"><label for="glowRange">🪔 Warm lamp glow</label><input id="glowRange" type="range" min="0" max="100" value="75" aria-label="Lamp glow strength"></div>
+        <div class="btnrow">
+          <button class="btn secondary" id="randomBtn" type="button">✺ Surprise me</button><button class="btn secondary" id="lightBtn" type="button">✦ Illuminate</button>
+          <button class="btn" id="downloadBtn" type="button">↓ Save PNG</button><button class="btn primary" id="shareBtn" type="button">↗ Share greeting</button>
+        </div>
+        <div class="small-actions"><button id="svgBtn" type="button">Save editable SVG</button><span style="color:#ceb4a4">·</span><button id="copyBtn" type="button">Copy design link</button></div>
+        <p class="footnote">No account, watermark, tracking or paid AI required. Your customisation stays in your browser until you choose to share it.</p>
+      </aside>
+    </main>
+    <footer class="footer"><span class="diamond">✦</span> DEEPAM — THE LIVING RANGOLI <span class="diamond">✦</span><br>Original geometric interpretations of traditional rangoli and diya motifs. Made for celebrating and sharing.</footer>
+  </div>
+  <div class="toaster" id="toast" role="status" aria-live="polite"></div>
+  <script type="module">
+    const NS='http://www.w3.org/2000/svg';
+    const TEMPLATES=[
+      {name:'Lotus halo',kind:'lotus',n:8}, {name:'Marigold circle',kind:'marigold',n:12},
+      {name:'Petal mandala',kind:'petal',n:6},{name:'Diya blessing',kind:'diya',n:8},
+      {name:'Royal lotus',kind:'royal',n:10},{name:'Temple bloom',kind:'temple',n:12},
+      {name:'Peacock festival',kind:'peacock',n:8},{name:'Kolam lace',kind:'lace',n:8},
+      {name:'Four directions',kind:'four',n:4},{name:'Festival burst',kind:'burst',n:16}
+    ];
+    const PALETTES=[
+      {name:'Heritage glow',bg:'#eedbc4',petal:'#d53668',accent:'#eda933',leaf:'#16765d',border:'#fff8ed',ink:'#643542'},
+      {name:'Royal violet',bg:'#ebdfd3',petal:'#7f3aaa',accent:'#e64a99',leaf:'#214d9c',border:'#fffaf3',ink:'#4f315d'},
+      {name:'Marigold sun',bg:'#f7e6c1',petal:'#f06e2d',accent:'#c2214a',leaf:'#5c7e2c',border:'#fff7e7',ink:'#894526'},
+      {name:'Peacock blue',bg:'#e5e6d5',petal:'#206aa8',accent:'#0c948a',leaf:'#6a48a3',border:'#fffaf4',ink:'#1e475f'},
+      {name:'Rangoli joy',bg:'#efe3d6',petal:'#ec3190',accent:'#f39b1e',leaf:'#7535bd',border:'#fffaf2',ink:'#77465f'},
+      {name:'Night of lamps',bg:'#292343',petal:'#d34179',accent:'#f5b753',leaf:'#268c94',border:'#fff1d9',ink:'#f5dba7'}
+    ];
+    const state={design:0,palette:0,colors:{...PALETTES[0]},recipient:'',sender:'',glow:75,lit:true};
+    const $=id=>document.getElementById(id);const safe=(s)=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[ch]));
+    const rad=d=>d*Math.PI/180,pt=(r,a)=>[r*Math.cos(rad(a)),r*Math.sin(rad(a))];
+    const circle=(x,y,r,fill,more='')=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" ${more}/>`;
+    const path=(d,fill,stroke='',width=0,more='')=>`<path d="${d}" fill="${fill}" ${stroke?`stroke="${stroke}" stroke-width="${width}" stroke-linejoin="round"`:''} ${more}/>`;
+    const ring=(r,stroke,width=5,dash='')=>circle(0,0,r,'none',`stroke="${stroke}" stroke-width="${width}" ${dash?`stroke-dasharray="${dash}"`:''}`);
+    const petal=(inner,outer,width,fill,outline,inset=0)=>{
+      let d=`M 0 ${-inner} C ${-width*.78} ${-inner-35} ${-width*.72} ${-outer+36} 0 ${-outer} C ${width*.72} ${-outer+36} ${width*.78} ${-inner-35} 0 ${-inner} Z`;
+      let mid=`M 0 ${-inner-5} Q ${width*.13} ${-(inner+outer)/2} 0 ${-outer+19}`;
+      return path(d,fill,outline,7)+path(mid,'none',outline,2.7,'opacity=".7"');
+    };
+    const angleRing=(count,fn,offset=0)=>Array.from({length:count},(_,i)=>`<g transform="rotate(${(i*360/count+offset).toFixed(3)})">${fn(i)}</g>`).join('');
+    const beadRing=(r,n,color,size=5)=>angleRing(n,()=>circle(0,-r,size,color));
+    const curls=(r,n,color)=>angleRing(n,()=>path(`M -10 ${-r+18} Q -32 ${-r-13} -2 ${-r-22} Q 17 ${-r-28} 9 ${-r-8} Q 3 ${-r+4} -8 ${-r-5}`,'none',color,4));
+    const leaves=(r,n,color,outline)=>angleRing(n,()=>petal(r,r+62,33,color,outline));
+    const florets=(r,n,color)=>angleRing(n,()=>`<g transform="translate(0 ${-r})">${angleRing(6,()=>path('M 0 -6 Q -10 -18 0 -30 Q 10 -18 0 -6 Z',color,''))}${circle(0,0,5,'#f9d278')}</g>`);
+    // A hand-drawn but mathematically symmetric geometry engine. All rotations equal 360/n degrees.
+    function makeMotif(kind,c){
+      const W=c.border,A=c.accent,P=c.petal,L=c.leaf;let s='';
+      if(kind==='lotus'){
+        s+=ring(273,W,4,'4 12')+beadRing(268,56,A,4);
+        s+=angleRing(8,i=>petal(81,254,92,i%2?A:P,W));
+        s+=angleRing(8,()=>petal(108,196,45,L,W),22.5);
+        s+=ring(89,W,8)+beadRing(95,34,A,5)+florets(48,8,A);
+      }else if(kind==='marigold'){
+        s+=angleRing(12,i=>petal(136,272,72,[A,P,L][i%3],W));
+        s+=angleRing(12,()=>petal(174,226,27,W,A),15);
+        s+=ring(152,W,10)+ring(132,L,8)+beadRing(145,72,A,5);
+        s+=angleRing(12,()=>petal(51,125,32,P,W));
+      }else if(kind==='petal'){
+        s+=angleRing(6,i=>petal(65,248,111,i%2?A:P,W));
+        s+=angleRing(6,()=>petal(170,286,33,L,W),30);
+        s+=ring(80,W,8)+beadRing(84,28,A,5)+curls(240,6,W);
+      }else if(kind==='diya'){
+        s+=ring(243,A,15)+ring(223,W,5);
+        s+=angleRing(8,i=>petal(122,278,70,i%2?P:A,W),22.5);
+        s+=angleRing(8,()=>petal(71,161,42,L,W));
+        s+=ring(83,A,10)+beadRing(95,32,W,6);
+      }else if(kind==='royal'){
+        s+=angleRing(10,i=>petal(135,277,64,i%2?P:'#a51e43',W));
+        s+=angleRing(10,()=>petal(132,217,39,A,W),18);
+        s+=ring(128,A,15)+ring(110,W,7)+angleRing(10,()=>petal(38,102,29,A,W));
+        s+=beadRing(260,60,W,4);
+      }else if(kind==='temple'){
+        s+=angleRing(12,i=>petal(145,284,63,i%3===0?L:i%3===1?P:A,W));
+        s+=angleRing(12,()=>petal(175,240,23,W,L),15);
+        s+=curls(246,12,W)+ring(148,W,10)+beadRing(146,60,A,5);
+        s+=angleRing(12,()=>petal(58,142,35,L,W));
+      }else if(kind==='peacock'){
+        s+=angleRing(8,i=>petal(122,266,77,i%2?L:P,W));
+        s+=angleRing(8,()=>petal(158,237,36,'#1969a5',W),22.5);
+        s+=angleRing(8,()=>`<g transform="translate(0 -209)">${circle(0,0,19,A,`stroke="${W}" stroke-width="4"`)}${circle(0,0,8,'#185f66')}</g>`);
+        s+=ring(120,A,10)+ring(110,W,5)+beadRing(114,44,W,4);
+        s+=angleRing(8,()=>petal(52,105,31,L,W));
+      }else if(kind==='lace'){
+        s+=angleRing(8,i=>petal(114,268,78,i%2?P:L,W));
+        s+=curls(210,16,W)+beadRing(263,64,W,5)+ring(112,A,14)+ring(135,W,5);
+        s+=angleRing(8,()=>petal(40,104,27,A,W));
+      }else if(kind==='four'){
+        s+=angleRing(4,i=>petal(99,267,111,i%2?P:A,W));
+        s+=angleRing(4,()=>petal(113,225,59,L,W),45);
+        s+=ring(112,W,10)+ring(95,A,9)+beadRing(116,36,W,6);
+        s+=curls(239,8,W)+florets(236,4,A);
+      }else if(kind==='burst'){
+        s+=angleRing(16,i=>petal(143,i%2?244:278,37,[P,A,L,'#b73f92'][i%4],W));
+        s+=ring(154,W,10)+ring(135,A,7)+beadRing(151,64,W,5);
+        s+=angleRing(8,()=>petal(56,134,38,P,W));s+=florets(247,8,A);
+      }
+      return s;
+    }
+    function diya(x,y,scale=1,t=0,c=state.colors){
+      const A=c.accent,W=c.border;
+      return `<g class="diya-button" transform="translate(${x.toFixed(2)} ${y.toFixed(2)}) scale(${scale})" style="cursor:pointer">
+        <ellipse cx="0" cy="12" rx="38" ry="12" fill="#38202a" opacity=".15"/>
+        <path d="M -35 -1 Q -30 30 0 31 Q 30 30 35 -1 Q 0 7 -35 -1 Z" fill="#a45128" stroke="${A}" stroke-width="4"/>
+        <path d="M -36 -2 Q 0 -17 36 -2 Q 0 16 -36 -2 Z" fill="#d78330" stroke="${W}" stroke-width="3"/>
+        <ellipse cx="0" cy="-2" rx="23" ry="6" fill="#6c3027"/>
+        <path d="M 0 -10 Q -13 -34 -2 -63 Q 14 -42 0 -10 Z" fill="#ffca52" class="flame"/>
+        <path d="M 0 -12 Q -5 -29 0 -46 Q 7 -31 0 -12 Z" fill="#fff5be" class="flame"/>
+        <ellipse cx="0" cy="-39" rx="24" ry="37" fill="#ffbb57" opacity="${(state.glow/440).toFixed(3)}" filter="url(#softGlow)" class="glimmer"/>
+        ${circle(-23,5,2.5,W)}${circle(0,18,2.5,A)}${circle(23,5,2.5,W)}
+      </g>`;
+    }
+    const corners=(c)=>{
+      let s='';for(let i=0;i<4;i++){
+        const x=i%2?686:74,y=i<2?78:804;
+        s+=`<g transform="translate(${x} ${y})">${circle(0,0,38,'none',`stroke="${c.accent}" stroke-width="2" opacity=".38"`)}${circle(0,0,29,'none',`stroke="${c.petal}" stroke-width="2" opacity=".48"`)}${angleRing(8,()=>petal(9,24,9,c.accent,c.border))}</g>`;
+      }return s;
+    };
+    function renderSVG(thumb=false){
+      const c=state.colors,kind=TEMPLATES[state.design].kind,n=TEMPLATES[state.design].n;
+      const title='Happy Diwali';
+      let decorations='';
+      // Outer lamps are placed at precise angular intervals; four designs add extra lamps.
+      const lampN=['marigold','royal','burst'].includes(kind)?8:4;
+      for(let i=0;i<lampN;i++){
+        const a=-90+i*360/lampN,xy=pt(306,a);decorations+=diya(xy[0],xy[1],lampN===8?.60:.74,a,c);
+      }
+      let caption='';
+      if(state.recipient||state.sender){
+        caption+=`<text x="380" y="814" fill="${c.ink}" font-size="18" font-family="Georgia,serif" text-anchor="middle" letter-spacing=".5">${safe((state.recipient?`For ${state.recipient}`:'')+(state.recipient&&state.sender?'  ·  ':'')+(state.sender?`From ${state.sender}`:''))}</text>`;
+      }
+      // The SVG is standalone. All gradients, fills and lettering travel with exports.
+      return `<svg xmlns="${NS}" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 760 880" width="760" height="880" role="img" aria-label="Happy Diwali original geometric rangoli">
+      <defs>
+        <radialGradient id="ground" cx="50%" cy="40%" r="75%"><stop stop-color="${c.bg}"/><stop offset="1" stop-color="${c.bg}"/></radialGradient>
+        <radialGradient id="halo"><stop stop-color="${c.accent}" stop-opacity=".32"/><stop offset="1" stop-color="${c.accent}" stop-opacity="0"/></radialGradient>
+        <filter id="floorGrain" x="0%" y="0%" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.34" numOctaves="2" seed="6" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.065"/></feComponentTransfer></filter>
+        <filter id="softGlow" x="-150%" y="-150%" width="400%" height="400%"><feGaussianBlur stdDeviation="12"/></filter>
+        <filter id="flameGlow" x="-120%" y="-150%" width="350%" height="400%"><feGaussianBlur stdDeviation="2.8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="petalShadow" x="-15%" y="-15%" width="130%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#4a1935" flood-opacity=".14"/></filter>
+      </defs>
+      <rect width="760" height="880" fill="url(#ground)"/>
+      <rect width="760" height="880" filter="url(#floorGrain)" opacity=".5"/>
+      <rect x="24" y="24" width="712" height="832" rx="2" fill="none" stroke="${c.accent}" stroke-width="1.5" opacity=".35"/>
+      <g opacity=".65">${corners(c)}</g>
+      <g transform="translate(380 375)">
+        ${circle(0,0,316,'url(#halo)')}
+        ${ring(287,c.accent,2,'2 13')}
+        <g filter="url(#petalShadow)">${makeMotif(kind,c)}</g>
+        ${beadRing(31,12,c.border,4)}
+        ${circle(0,0,28,c.accent,`stroke="${c.border}" stroke-width="7"`)}
+        ${circle(0,0,11,c.petal)}
+        ${decorations}
+        <g class="glimmer" opacity=".65">${beadRing(294,36,c.accent,2.3)}</g>
+      </g>
+      <path d="M 240 696 Q 380 678 520 696" stroke="${c.accent}" stroke-width="1.8" fill="none" opacity=".65"/>
+      ${circle(231,695,4,c.accent)}${circle(529,695,4,c.accent)}
+      <text x="380" y="768" font-size="68" font-family="Georgia, 'Times New Roman',serif" font-style="italic" font-weight="500" letter-spacing="-1.8" text-anchor="middle" fill="${c.ink}">${title}</text>
+      <path d="M 286 786 H 359 M 401 786 H 474" stroke="${c.accent}" stroke-width="2.3" opacity=".7"/>${circle(380,786,6,c.accent)}
+      ${caption}
+      </svg>`;
+    }
+    function templateThumbnail(index){
+      const item=TEMPLATES[index],c=PALETTES[index%PALETTES.length],motif=makeMotif(item.kind,c);
+      return `<svg viewBox="-310 -310 620 620" aria-hidden="true" role="presentation"><circle r="300" fill="${c.bg}"/>${motif}${circle(0,0,30,c.accent,`stroke="${c.border}" stroke-width="8"`)}</svg>`;
+    }
+    const palettes=$('paletteList');const templates=$('templateScroller');const colorGrid=$('colorGrid');let toastTimer;
+    function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3200)}
+    function draw(){
+      const svg=renderSVG();$('artwork').outerHTML=svg.replace('<svg ','<svg id="artwork" ');
+      $('geometryStatus').textContent=`${TEMPLATES[state.design].n}-fold symmetry · ${(360/TEMPLATES[state.design].n).toFixed(1)}° precision`;
+      $('designCounter').textContent=`${String(state.design+1).padStart(2,'0')} / ${TEMPLATES.length}`;
+      $('paletteName').textContent=state.palette<0?'Your own mix':PALETTES[state.palette].name;
+      [...templates.children].forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===state.design));});
+      [...palettes.children].forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===state.palette));});
+      $('cardStage').classList.toggle('is-lit',state.lit);
+      $('lightBtn').textContent=state.lit?'☾ Dim the lamps':'✦ Illuminate';
+    }
+    function renderColors(){const colors=[['bg','Ground'],['petal','Petals'],['accent','Accents'],['leaf','Leaves']];colorGrid.innerHTML=colors.map(([key,label])=>`<label class="color-item">${label}<input type="color" aria-label="${label} color" data-color="${key}" value="${state.colors[key]}"></label>`).join('');}
+    function sync(){renderColors();draw();}
+    for(let i=0;i<TEMPLATES.length;i++){const t=TEMPLATES[i],btn=document.createElement('button');btn.className='template';btn.type='button';btn.setAttribute('aria-label',`Use ${t.name} design`);btn.innerHTML=templateThumbnail(i)+`<span>${t.name}</span>`;btn.addEventListener('click',()=>{state.design=i;draw();});templates.append(btn);}
+    PALETTES.forEach((p,i)=>{const b=document.createElement('button');b.className='swatch';b.type='button';b.title=p.name;b.setAttribute('aria-label',p.name+' palette');b.innerHTML=`<i style="background:${p.petal}"></i><i style="background:${p.accent}"></i>`;b.addEventListener('click',()=>{state.palette=i;state.colors={...p};sync();});palettes.append(b);});
+    colorGrid.addEventListener('input',e=>{if(!e.target.matches('[data-color]'))return;const key=e.target.dataset.color;state.colors[key]=e.target.value;state.palette=-1;draw();});
+    $('recipient').addEventListener('input',e=>{state.recipient=e.target.value;draw();});$('sender').addEventListener('input',e=>{state.sender=e.target.value;draw();});
+    $('glowRange').addEventListener('input',e=>{state.glow=+e.target.value;draw();});
+    $('randomBtn').addEventListener('click',()=>{let next=Math.floor(Math.random()*TEMPLATES.length);state.design=next===state.design?(next+1)%TEMPLATES.length:next;state.palette=Math.floor(Math.random()*PALETTES.length);state.colors={...PALETTES[state.palette]};sync();burst(380,375,80);});
+    $('lightBtn').addEventListener('click',()=>{state.lit=!state.lit;draw();if(state.lit)burst(380,375,110);});
+    function urlWithDesign(){const u=new URL(location.href);u.search='';u.hash='';u.searchParams.set('d',state.design);u.searchParams.set('p',state.palette);for(const [k,v] of Object.entries(state.colors))if(state.palette<0||!Object.hasOwn(PALETTES[state.palette]||{},k)||PALETTES[state.palette][k]!==v)u.searchParams.set(k,v.slice(1));if(state.recipient)u.searchParams.set('to',state.recipient);if(state.sender)u.searchParams.set('from',state.sender);return u.toString();}
+    function loadQuery(){const q=new URLSearchParams(location.search),d=Number(q.get('d')),p=Number(q.get('p'));if(q.has('d')&&Number.isInteger(d)&&d>=0&&d<TEMPLATES.length)state.design=d;if(q.has('p')&&Number.isInteger(p)&&p>=0&&p<PALETTES.length){state.palette=p;state.colors={...PALETTES[p]};}if(p===-1){state.palette=-1;}for(const k of ['bg','petal','accent','leaf','border','ink']){const v=q.get(k);if(v&&/^[0-9a-fA-F]{6}$/.test(v)){state.colors[k]='#'+v;state.palette=-1;}}state.recipient=(q.get('to')||'').slice(0,34);state.sender=(q.get('from')||'').slice(0,34);$('recipient').value=state.recipient;$('sender').value=state.sender;}
+    $('copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(urlWithDesign());toast('Your personalised link is copied ✨')}catch{toast('Link copy unavailable. Use Share greeting instead.')}});
+    const svgSource=()=>new XMLSerializer().serializeToString($('artwork'));
+    async function pngBlob(){const source=svgSource(),blob=new Blob([source],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(blob);try{const img=new Image();await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=()=>reject(new Error('SVG rendering failed'));img.src=url;});const canvas=document.createElement('canvas');canvas.width=1520;canvas.height=1760;const ctx=canvas.getContext('2d');ctx.drawImage(img,0,0,canvas.width,canvas.height);return await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('Image export failed')),'image/png'));}finally{URL.revokeObjectURL(url);}}
+    function downloadBlob(blob,name){const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),3000);}
+    $('downloadBtn').addEventListener('click',async()=>{try{$('downloadBtn').disabled=true;const b=await pngBlob();downloadBlob(b,'deepam-happy-diwali.png');toast('Your Diwali card has been saved 🪔');}catch(e){toast('Could not save image: '+e.message);}finally{$('downloadBtn').disabled=false;}});
+    $('svgBtn').addEventListener('click',()=>{downloadBlob(new Blob([svgSource()],{type:'image/svg+xml;charset=utf-8'}),'deepam-editable-rangoli.svg');toast('Editable vector SVG saved ✨');});
+    $('shareBtn').addEventListener('click',async()=>{
+      const btn=$('shareBtn');btn.disabled=true;
+      try{
+        const blob=await pngBlob(),file=new File([blob],'happy-diwali.png',{type:'image/png'}),url=urlWithDesign();
+        if(navigator.share&&navigator.canShare?.({files:[file]})){await navigator.share({files:[file],title:'Happy Diwali — DEEPAM',text:'A little light, made yours. 🪔'});}
+        else if(navigator.share){await navigator.share({title:'Happy Diwali — DEEPAM',text:'A little light, made yours. 🪔',url});}
+        else{downloadBlob(blob,'deepam-happy-diwali.png');toast('Image saved — share it from your gallery!');}
+      }catch(e){if(e?.name!=='AbortError')toast('Sharing unavailable — try Save PNG instead.');}finally{btn.disabled=false;}
+    });
+    const canvas=$('fxCanvas'),ctx=canvas.getContext('2d');let particles=[],raf=0;const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function sizeCanvas(){const r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(r.width*d);canvas.height=Math.round(r.height*d);ctx.setTransform(d,0,0,d,0,0);return r;}
+    function burst(x,y,count=80){if(reduce)return;const r=sizeCanvas(),cx=x/760*r.width,cy=y/880*r.height,scale=r.width/760;for(let i=0;i<Math.min(count,120);i++){const angle=Math.random()*Math.PI*2,speed=(.8+Math.random()*5)*Math.max(.5,scale*1.4);particles.push({x:cx,y:cy,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-1.1,age:0,life:35+Math.random()*40,r:1+Math.random()*2.7,color:[state.colors.petal,state.colors.accent,state.colors.leaf,'#ffe6ae'][i%4]});}if(!raf)tick();}
+    function tick(){const r=canvas.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);particles=particles.filter(p=>p.age++<p.life);for(const p of particles){p.vy+=.055;p.vx*=.989;p.vy*=.995;p.x+=p.vx;p.y+=p.vy;ctx.globalAlpha=Math.max(0,1-p.age/p.life);ctx.fillStyle=p.color;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,2*Math.PI);ctx.fill();}ctx.globalAlpha=1;if(particles.length)raf=requestAnimationFrame(tick);else raf=0;}
+    $('cardStage').addEventListener('click',e=>{const box=$('cardStage').getBoundingClientRect();const x=(e.clientX-box.left)/box.width*760,y=(e.clientY-box.top)/box.height*880;$('stageHint').classList.add('hidden');burst(x,y,100);});
+    // Progressive enhancement: Motion runs only when the CDN is available; SVG/PNG never depend on it.
+    (async()=>{try{const {animate}=await import('https://cdn.jsdelivr.net/npm/motion@12/+esm');if(reduce)return;animate('.intro h1',{opacity:[0,1],y:[13,0]},{duration:.75,ease:'easeOut'});animate('.card-frame',{opacity:[0,1],scale:[.97,1]},{duration:.9,ease:'easeOut'});}catch(_){/* Offline-friendly CSS/Canvas fallback. */}})();
+    if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+    loadQuery();sync();
+  </script>
+</body>
+</html>
