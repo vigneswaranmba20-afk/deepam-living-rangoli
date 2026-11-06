@@ -57,13 +57,10 @@
   <div class="shell">
     <header class="top">
       <a class="brand" href="./" aria-label="DEEPAM home"><span class="mark" aria-hidden="true">✦</span><span><span class="wordmark">DEEPAM</span><br><span class="micro">The living rangoli</span></span></a>
-      <div class="topaside"><span class="micro">Made with geometry. Shared with love.</span><span aria-hidden="true" style="color:#b18b5d;font-size:20px">✺</span></div>
     </header>
-    <section class="intro" aria-label="Introduction"><div class="kicker">An interactive festival of lights</div><h1>A little light, <em>made yours.</em></h1><p>Choose a rangoli. Make its colours your own. Light the diyas and share a little joy. Every design is drawn with living vector geometry.</p></section>
     <main class="workspace">
       <section class="preview-area" aria-label="Live greeting card preview">
-        <div class="card-frame"><div id="cardStage" class="card-stage is-lit" role="img" aria-label="Happy Diwali greeting card with an intricate rangoli and glowing diyas"><svg id="artwork" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 880" aria-hidden="true"></svg><canvas class="fx-canvas" id="fxCanvas" aria-hidden="true"></canvas><div id="stageHint" class="stage-hint">✦ Tap the rangoli to scatter light</div></div></div>
-        <div class="preview-foot"><span><span aria-hidden="true">✧</span> Unique vector art · sharp at every size</span><span id="geometryStatus">8-fold symmetry · 45° precision</span></div>
+        <div class="card-frame"><div id="cardStage" class="card-stage is-lit" role="img" aria-label="Happy Diwali greeting card with an intricate rangoli and glowing diyas"><svg id="artwork" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 880" aria-hidden="true"></svg><canvas class="fx-canvas" id="fxCanvas" aria-hidden="true"></canvas></div></div>
       </section>
       <aside class="studio" aria-label="Festival canvas and color stories">
         <div class="studio-hd"><h2>Festival canvas</h2><span class="counter" id="designCounter">01 / 10</span></div>
@@ -73,10 +70,8 @@
         <div class="field-label"><span>Color stories</span><span class="label-note" id="paletteName">Heritage glow</span></div>
         <div id="paletteList" class="palette-scroll" aria-label="Color palettes"></div>
         <div class="btnrow"><button class="btn" id="downloadBtn" type="button">↓ Save card</button><button class="btn primary" id="shareBtn" type="button">↗ Share greeting</button></div>
-        <div class="legacy-controls" aria-hidden="true"><div id="colorGrid"></div><input id="recipient" type="text" tabindex="-1"><input id="sender" type="text" tabindex="-1"><input id="glowRange" type="range" value="14" tabindex="-1"><button id="lightBtn" type="button" tabindex="-1"></button><button id="svgBtn" type="button" tabindex="-1"></button><button id="copyBtn" type="button" tabindex="-1"></button></div>
       </aside>
     </main>
-    <footer class="footer"><span class="diamond">✦</span> DEEPAM — THE LIVING RANGOLI <span class="diamond">✦</span><br>Original geometric interpretations of traditional rangoli and diya motifs. Made for celebrating and sharing.</footer>
   </div>
   <div class="toaster" id="toast" role="status" aria-live="polite"></div>
   <script type="module">
@@ -106,7 +101,7 @@
       {name:'Midnight teal',bg:'#153e4b',petal:'#ff8d81',accent:'#ebc671',leaf:'#76b6a4',border:'#fff2dd',ink:'#fff0cd'},
       {name:'Spring gulal',bg:'#f3e5e5',petal:'#dd4893',accent:'#f0a747',leaf:'#738f4b',border:'#fffdf7',ink:'#89476a'}
     ];
-    const state={design:0,palette:0,colors:{...PALETTES[0]},recipient:'',sender:'',glow:14,lit:true};
+    const state={design:0,palette:0,colors:{...PALETTES[0]},lit:true};
     const $=id=>document.getElementById(id);const safe=(s)=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[ch]));
     const rad=d=>d*Math.PI/180,pt=(r,a)=>[r*Math.cos(rad(a)),r*Math.sin(rad(a))];
     const circle=(x,y,r,fill,more='')=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" ${more}/>`;
@@ -185,7 +180,7 @@
         <ellipse cx="0" cy="-2" rx="23" ry="6" fill="#6c3027"/>
         <path d="M 0 -10 Q -13 -34 -2 -63 Q 14 -42 0 -10 Z" fill="#ffca52" class="flame"/>
         <path d="M 0 -12 Q -5 -29 0 -46 Q 7 -31 0 -12 Z" fill="#fff5be" class="flame"/>
-        <ellipse cx="0" cy="-39" rx="24" ry="37" fill="#ffbb57" opacity="${(state.glow/440).toFixed(3)}" filter="url(#softGlow)" class="glimmer"/>
+        <ellipse cx="0" cy="-39" rx="24" ry="37" fill="#ffbb57" opacity=".025" filter="url(#softGlow)" class="glimmer"/>
         ${circle(-23,5,2.5,W)}${circle(0,18,2.5,A)}${circle(23,5,2.5,W)}
       </g>`;
     }
@@ -203,10 +198,6 @@
       const lampN=['marigold','royal','burst'].includes(kind)?8:4;
       for(let i=0;i<lampN;i++){
         const a=-90+i*360/lampN,xy=pt(306,a);decorations+=diya(xy[0],xy[1],lampN===8?.60:.74,a,c);
-      }
-      let caption='';
-      if(state.recipient||state.sender){
-        caption+=`<text x="380" y="814" fill="${c.ink}" font-size="18" font-family="Georgia,serif" text-anchor="middle" letter-spacing=".5">${safe((state.recipient?`For ${state.recipient}`:'')+(state.recipient&&state.sender?'  ·  ':'')+(state.sender?`From ${state.sender}`:''))}</text>`;
       }
       // The SVG is standalone. All gradients, fills and lettering travel with exports.
       return `<svg xmlns="${NS}" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 760 880" width="760" height="880" role="img" aria-label="Happy Diwali original geometric rangoli">
@@ -236,44 +227,34 @@
       ${circle(231,695,4,c.accent)}${circle(529,695,4,c.accent)}
       <text x="380" y="768" font-size="68" font-family="Georgia, 'Times New Roman',serif" font-style="italic" font-weight="500" letter-spacing="-1.8" text-anchor="middle" fill="${c.ink}">${title}</text>
       <path d="M 286 786 H 359 M 401 786 H 474" stroke="${c.accent}" stroke-width="2.3" opacity=".7"/>${circle(380,786,6,c.accent)}
-      ${caption}
       </svg>`;
     }
     function templateThumbnail(index){
       const item=TEMPLATES[index],c=PALETTES[index%PALETTES.length],motif=makeMotif(item.kind,c);
       return `<svg viewBox="-310 -310 620 620" aria-hidden="true" role="presentation"><circle r="300" fill="${c.bg}"/>${motif}${circle(0,0,30,c.accent,`stroke="${c.border}" stroke-width="8"`)}</svg>`;
     }
-    const palettes=$('paletteList');const templates=$('templateScroller');const colorGrid=$('colorGrid');let toastTimer;
+    const palettes=$('paletteList');const templates=$('templateScroller');let toastTimer;
     function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3200)}
     function draw(){
       const svg=renderSVG();$('artwork').outerHTML=svg.replace('<svg ','<svg id="artwork" ');
-      $('geometryStatus').textContent=`${TEMPLATES[state.design].n}-fold symmetry · ${(360/TEMPLATES[state.design].n).toFixed(1)}° precision`;
       $('designCounter').textContent=`${String(state.design+1).padStart(2,'0')} / ${TEMPLATES.length}`;
       $('paletteName').textContent=state.palette<0?'Your own mix':PALETTES[state.palette].name;
       [...templates.children].forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===state.design));});
       [...palettes.children].forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===state.palette));});
       $('cardStage').classList.toggle('is-lit',state.lit);
-      $('lightBtn').textContent=state.lit?'☾ Dim the lamps':'✦ Illuminate';
     }
-    function renderColors(){const colors=[['bg','Ground'],['petal','Petals'],['accent','Accents'],['leaf','Leaves']];colorGrid.innerHTML=colors.map(([key,label])=>`<label class="color-item">${label}<input type="color" aria-label="${label} color" data-color="${key}" value="${state.colors[key]}"></label>`).join('');}
-    function sync(){renderColors();draw();}
+    function sync(){draw();}
     for(let i=0;i<TEMPLATES.length;i++){const t=TEMPLATES[i],btn=document.createElement('button');btn.className='template';btn.type='button';btn.setAttribute('aria-label',`Use ${t.name} design`);btn.innerHTML=templateThumbnail(i)+`<span>${t.name}</span>`;btn.addEventListener('click',()=>{state.design=i;draw();});templates.append(btn);}
     PALETTES.forEach((p,i)=>{const b=document.createElement('button');b.className='swatch';b.type='button';b.title=p.name;b.setAttribute('aria-label',p.name+' palette');b.innerHTML=`<i style="background:${p.petal}"></i><i style="background:${p.accent}"></i>`;b.addEventListener('click',()=>{state.palette=i;state.colors={...p};sync();});palettes.append(b);});
-    colorGrid.addEventListener('input',e=>{if(!e.target.matches('[data-color]'))return;const key=e.target.dataset.color;state.colors[key]=e.target.value;state.palette=-1;draw();});
-    $('recipient').addEventListener('input',e=>{state.recipient=e.target.value;draw();});$('sender').addEventListener('input',e=>{state.sender=e.target.value;draw();});
-    $('glowRange').addEventListener('input',e=>{state.glow=+e.target.value;draw();});
     function hslHex(h,s,l){s/=100;l/=100;const a=s*Math.min(l,1-l),k=n=>(n+h/30)%12,f=n=>l-a*Math.max(-1,Math.min(k(n)-3,9-k(n),1));return '#'+[f(0),f(8),f(4)].map(v=>Math.round(v*255).toString(16).padStart(2,'0')).join('');}
     function surpriseColors(){const h=Math.random()*360,dark=Math.random()<.18;return {bg:hslHex(h,dark?30:32,dark?17:90),petal:hslHex((h+25)%360,75,47),accent:hslHex((h+158)%360,82,53),leaf:hslHex((h+262)%360,59,40),border:dark?'#fff1de':'#fffaf2',ink:dark?'#f7e3c5':hslHex(h,28,27)};}
     $('randomBtn').addEventListener('click',()=>{let next=Math.floor(Math.random()*TEMPLATES.length);state.design=next===state.design?(next+1)%TEMPLATES.length:next;if(Math.random()<.25){state.palette=Math.floor(Math.random()*PALETTES.length);state.colors={...PALETTES[state.palette]};}else{state.palette=-1;state.colors=surpriseColors();}sync();burst(380,375,35);if(!reduce&&document.querySelector('.card-frame').animate)document.querySelector('.card-frame').animate([{transform:'scale(.988)',opacity:.9},{transform:'scale(1)',opacity:1}],{duration:310,easing:'ease-out'});});
-    $('lightBtn').addEventListener('click',()=>{state.lit=!state.lit;draw();if(state.lit)burst(380,375,110);});
-    function urlWithDesign(){const u=new URL(location.href);u.search='';u.hash='';u.searchParams.set('d',state.design);u.searchParams.set('p',state.palette);for(const [k,v] of Object.entries(state.colors))if(state.palette<0||!Object.hasOwn(PALETTES[state.palette]||{},k)||PALETTES[state.palette][k]!==v)u.searchParams.set(k,v.slice(1));if(state.recipient)u.searchParams.set('to',state.recipient);if(state.sender)u.searchParams.set('from',state.sender);return u.toString();}
-    function loadQuery(){const q=new URLSearchParams(location.search),d=Number(q.get('d')),p=Number(q.get('p'));if(q.has('d')&&Number.isInteger(d)&&d>=0&&d<TEMPLATES.length)state.design=d;if(q.has('p')&&Number.isInteger(p)&&p>=0&&p<PALETTES.length){state.palette=p;state.colors={...PALETTES[p]};}if(p===-1){state.palette=-1;}for(const k of ['bg','petal','accent','leaf','border','ink']){const v=q.get(k);if(v&&/^[0-9a-fA-F]{6}$/.test(v)){state.colors[k]='#'+v;state.palette=-1;}}state.recipient='';state.sender='';}
-    $('copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(urlWithDesign());toast('Your personalised link is copied ✨')}catch{toast('Link copy unavailable. Use Share greeting instead.')}});
+    function urlWithDesign(){const u=new URL(location.href);u.search='';u.hash='';u.searchParams.set('d',state.design);u.searchParams.set('p',state.palette);for(const k of ['bg','petal','accent','leaf','border','ink']){const v=state.colors[k];if(state.palette<0||PALETTES[state.palette][k]!==v)u.searchParams.set(k,v.slice(1));}return u.toString();}
+    function loadQuery(){const q=new URLSearchParams(location.search),d=Number(q.get('d')),p=Number(q.get('p'));if(q.has('d')&&Number.isInteger(d)&&d>=0&&d<TEMPLATES.length)state.design=d;if(q.has('p')&&Number.isInteger(p)&&p>=0&&p<PALETTES.length){state.palette=p;state.colors={...PALETTES[p]};}if(q.get('p')==='-1')state.palette=-1;for(const k of ['bg','petal','accent','leaf','border','ink']){const v=q.get(k);if(v&&/^[0-9a-fA-F]{6}$/.test(v)){state.colors[k]='#'+v;state.palette=-1;}}}
     const svgSource=()=>new XMLSerializer().serializeToString($('artwork'));
     async function pngBlob(){const source=svgSource(),blob=new Blob([source],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(blob);try{const img=new Image();await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=()=>reject(new Error('SVG rendering failed'));img.src=url;});const canvas=document.createElement('canvas');canvas.width=1520;canvas.height=1760;const ctx=canvas.getContext('2d');ctx.drawImage(img,0,0,canvas.width,canvas.height);return await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('Image export failed')),'image/png'));}finally{URL.revokeObjectURL(url);}}
     function downloadBlob(blob,name){const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),3000);}
     $('downloadBtn').addEventListener('click',async()=>{try{$('downloadBtn').disabled=true;const b=await pngBlob();downloadBlob(b,'deepam-happy-diwali.png');toast('Your Diwali card has been saved 🪔');}catch(e){toast('Could not save image: '+e.message);}finally{$('downloadBtn').disabled=false;}});
-    $('svgBtn').addEventListener('click',()=>{downloadBlob(new Blob([svgSource()],{type:'image/svg+xml;charset=utf-8'}),'deepam-editable-rangoli.svg');toast('Editable vector SVG saved ✨');});
     $('shareBtn').addEventListener('click',async()=>{
       const btn=$('shareBtn');btn.disabled=true;
       try{
@@ -287,7 +268,7 @@
     function sizeCanvas(){const r=canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(r.width*d);canvas.height=Math.round(r.height*d);ctx.setTransform(d,0,0,d,0,0);return r;}
     function burst(x,y,count=36){if(reduce)return;const r=sizeCanvas(),cx=x/760*r.width,cy=y/880*r.height,scale=r.width/760;for(let i=0;i<Math.min(count,50);i++){const angle=Math.random()*Math.PI*2,speed=(.4+Math.random()*3.2)*Math.max(.5,scale*1.4);particles.push({x:cx,y:cy,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-1.1,age:0,life:35+Math.random()*40,r:1+Math.random()*2.7,color:[state.colors.petal,state.colors.accent,state.colors.leaf,'#ffe6ae'][i%4]});}if(!raf)tick();}
     function tick(){const r=canvas.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);particles=particles.filter(p=>p.age++<p.life);for(const p of particles){p.vy+=.055;p.vx*=.989;p.vy*=.995;p.x+=p.vx;p.y+=p.vy;ctx.globalAlpha=Math.max(0,1-p.age/p.life);ctx.fillStyle=p.color;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,2*Math.PI);ctx.fill();}ctx.globalAlpha=1;if(particles.length)raf=requestAnimationFrame(tick);else raf=0;}
-    $('cardStage').addEventListener('click',e=>{const box=$('cardStage').getBoundingClientRect();const x=(e.clientX-box.left)/box.width*760,y=(e.clientY-box.top)/box.height*880;$('stageHint').classList.add('hidden');burst(x,y,28);});
+    $('cardStage').addEventListener('click',e=>{const box=$('cardStage').getBoundingClientRect();const x=(e.clientX-box.left)/box.width*760,y=(e.clientY-box.top)/box.height*880;burst(x,y,28);});
     // Progressive enhancement: Motion runs only when the CDN is available; SVG/PNG never depend on it.
     (async()=>{try{const {animate}=await import('https://cdn.jsdelivr.net/npm/motion@12/+esm');if(reduce)return;animate('.surprise',{opacity:[0,1],y:[12,0]},{duration:.6,ease:'easeOut'});animate('.card-frame',{opacity:[0,1],scale:[.97,1]},{duration:.9,ease:'easeOut'});}catch(_){/* Offline-friendly CSS/Canvas fallback. */}})();
     if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
